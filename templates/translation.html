@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Translation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="margin-bottom: 50px;">Translation</h1>
+    <form action="{{ url_for('translation')}}" method="post" enctype="multipart/form-data">
+        <div class="Upload">
+            <label for="translation">Upload (PDF or TXT file):</label>
+            <input class="upload-file" type="file" id="translation" name="translation" accept="application/pdf, text/plain" style="background-color: None;" required>
+        </div>
+        <div class="form-group" style="margin-top: 15px;">
+            <button type="submit" class="submit-button">Upload</button>
+        </div>
+    </form>
+
+    <div style="margin-top: 30px;">
+        <p>{{ text_translation }}</p>
+    </div>
+</div>{% endblock %}

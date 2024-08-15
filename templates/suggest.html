@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Suggest Sentences{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Suggest Sentences</h1>
+    <form action="{{ url_for('suggest_sentences')}}" method="post">
+        <textarea name="user_input_suggest" class="input-field" placeholder="Type your text here"></textarea>
+        <br>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+    <p>
+        <span">{{ text_suggest }}</span>
+    </p>
+</div>
+{% endblock %}
